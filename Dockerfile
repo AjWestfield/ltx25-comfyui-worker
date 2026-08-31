@@ -12,3 +12,6 @@ RUN set -e; \
 # Map the LTX-2.5 model folders on the network volume (base yaml lacks
 # diffusion_models/text_encoders/latent_upscale_models)
 COPY extra_model_paths.yaml /comfyui/extra_model_paths.yaml
+
+# Boot smoke test: catch startup-breaking issues at build time
+RUN cd /comfyui && timeout 300 python main.py --quick-test-for-ci --cpu
