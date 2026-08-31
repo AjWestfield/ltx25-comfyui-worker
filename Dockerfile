@@ -1,4 +1,4 @@
-FROM runpod/worker-comfyui:5.8.7-base
+FROM runpod/worker-comfyui:5.8.6-base-cuda12.8.1
 
 # Upgrade the bundled ComfyUI to v0.34.0 (LTX-2.5 support landed in v0.32.0)
 RUN set -e; \
